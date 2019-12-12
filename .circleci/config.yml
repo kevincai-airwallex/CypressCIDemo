@@ -4,7 +4,9 @@ jobs:
   build:
     docker:
       # the Docker image with Cypress dependencies
-      - image: cypress/base:8
+      - image: cypress/base:10
+      - image: circleci/node:10
+      
         environment:
           ## this enables colors in the output
           TERM: xterm
@@ -23,6 +25,9 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
+      - run:
+          name: install dependency
+          command: yarn
       - run:
           name: Running E2E tests 
           command: yarn test
