@@ -2,7 +2,7 @@ describe('测试POST API', () => {
     const item = {"id":291, "title": "kevin", "name": "kevin" }
   
     it('POST会新增一个用户', () => {
-      //检查user内容增加了.
+      //检查user内容增加了
       cy.request('/user').then((res)=>{
         expect(res.status).to.be.equal(200)
       })
