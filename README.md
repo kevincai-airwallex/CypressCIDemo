@@ -1,1 +1,2 @@
-# CypressCIDemo
+# cypressCIDemo
+Showcase of Cypress
