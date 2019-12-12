@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       # the Docker image with Cypress dependencies
-      - image: cypress/base:10-browsers
+      - image: cypress/base:10
       - image: circleci/node:10
       
         environment:
