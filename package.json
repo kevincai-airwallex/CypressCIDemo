@@ -7,8 +7,8 @@
     "cy:run": "yarn cypress run",
     "debug": "yarn cypress open",
     "start": "node server.js",
-    "test": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test start https-get://localhost:3002 ci:run",
-    "ci:run": "yarn ci:run1 & yan ci:run2",
+    "test": "START_SERVER_AND_TEST_INSECURE=1 start-server-and-test start https-get://localhost:3002 ci-run",
+    "ci-run": "yarn ci:run1 & yarn ci:run2",
     "ci:run1": "yarn cypress run --record --key 76657dee-364d-427f-ab1c-8f34eedd33e9 --group group1 --spec \"cypress/integration/first-spec.js\" --parallel",
     "ci:run2": "yarn cypress run --record --key 76657dee-364d-427f-ab1c-8f34eedd33e9 --group group2 --spec \"cypress/integration/third-spec.js\" --parallel"
   },
