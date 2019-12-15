@@ -4,8 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         sh '''echo "Running build ${BUILD_ID} on ${JENKINS_URL}"
-echo "${PATH}"
-echo "${workspace}"'''
+export PATH = ${PATH}
+sh \'npm install\''''
       }
     }
   }
