@@ -1,11 +1,28 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        sh '''echo "Running build ${BUILD_ID} on ${JENKINS_URL}"
-npm install'''
-      }
+    agent any
+
+    tools {nodejs "node"}
+
+    environment {
+        CHROME_BIN = '/bin/google-chrome'
     }
-  }
+
+    stages {
+        stage('Dependencies') {
+            steps {
+                sh 'npm i'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "build process"
+            }
+        }
+        stage('e2e Tests') {
+            steps {
+                sh 'npm run test'
+            }
+        }
+
+    }
 }
