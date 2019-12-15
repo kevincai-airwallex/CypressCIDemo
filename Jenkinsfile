@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'echo "test"'
+        sh '''
+echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
+sh \'yarn debug\'
+'''
       }
     }
   }
