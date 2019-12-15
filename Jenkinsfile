@@ -4,7 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         sh '''echo "Running build ${BUILD_ID} on ${JENKINS_URL}"
-sh \'apt-get update && apt-get -y install xvfb\''''
+sh "npm install -g yarn"
+sh "yarn install"'''
       }
     }
   }
