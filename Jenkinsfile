@@ -24,4 +24,11 @@ pipeline {
   environment {
     CHROME_BIN = '/bin/google-chrome'
   }
+  post {
+    // shutdown the server running in the background
+    always {
+      echo 'Stopping local server'
+      sh 'pkill -f http-server'
+    }
+  }
 }
