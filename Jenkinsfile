@@ -4,6 +4,7 @@ pipeline {
     stage('Dependencies') {
       steps {
         sh 'npm i'
+        sh 'npm install start-server-and-test'
       }
     }
     stage('Build') {
