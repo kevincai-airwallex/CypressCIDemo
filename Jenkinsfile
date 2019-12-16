@@ -4,6 +4,7 @@ pipeline {
     stage('Dependencies') {
       steps {
         sh 'npm i'
+        sh 'npm install cypress --save-dev'
       }
     }
     stage('Build') {
@@ -13,7 +14,6 @@ pipeline {
     }
     stage('e2e Tests') {
       steps {
-        sh 'unset NODE_OPTIONS'
         sh 'npm run test'
       }
     }
