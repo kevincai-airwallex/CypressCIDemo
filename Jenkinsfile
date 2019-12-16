@@ -13,6 +13,7 @@ pipeline {
     }
     stage('e2e Tests') {
       steps {
+        sh 'unset NODE_OPTIONS'
         sh 'npm run test'
       }
     }
